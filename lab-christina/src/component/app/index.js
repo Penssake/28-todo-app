@@ -1,8 +1,7 @@
-'use strict'
-
 import React from 'react'
 import {BrowserRouter, Route, Link} from 'react-router-dom'
 import Dashboard from '../dashboard'
+import Landing from '../landing'
 
 class App extends React.Component {
   render(){
@@ -15,11 +14,11 @@ class App extends React.Component {
               <nav>
                 <ul>
                   <li> <Link to='/'> home </Link> </li>
-                  <li> <Link to='/dashboard'> dasboard</Link> </li>
+                  <li> <Link to='/dashboard'> dashboard</Link> </li>
                 </ul>
               </nav>
             </header>
-            <Route exact path='/' component={() => <h1> landing </h1>} />
+            <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard} />
           </div>
         </BrowserRouter>
