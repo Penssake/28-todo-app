@@ -9,6 +9,7 @@ class NoteForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleSubmit(event) {
@@ -25,11 +26,11 @@ class NoteForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>Tatatatata</h1>
         <form
           className='note-form'
           onSubmit={this.handleSubmit}
         >
+          <label> Task </label>
           <input
             type='text'
             name='title'
@@ -38,11 +39,12 @@ class NoteForm extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label> Task description </label>
           <input
             type='text'
             name='content'
             placeholder='content'
-            value={this.state.title}
+            value={this.state.content}
             onChange={this.handleChange}
           />
           <button type='submit'>create task</button>
