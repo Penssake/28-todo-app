@@ -2,8 +2,6 @@ import React from 'react'
 import {BrowserRouter, Route, Link} from 'react-router-dom'
 import Dashboard from '../dashboard'
 import Landing from '../landing'
-import NoteForm from '../note-form'
-import NoteItem from '../note-item'
 
 class App extends React.Component {
   render(){
@@ -22,7 +20,6 @@ class App extends React.Component {
             </header>
             <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/dashboard' component={NoteItem} />
           </div>
         </BrowserRouter>
       </div>
