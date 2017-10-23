@@ -1,0 +1,70 @@
+// main constants
+$primary-color: white;
+$accent-color: #91AD00;
+$buttonList: 'remove' 20px, 'submit' 40px;
+$buttonColor: #3E0059;
+$buttonFontColor: white;
+$paragraphColor: #808080;
+
+// nav bar constants
+$nav-max-width: 100%;
+$nav-min-width: 90%;
+$nav-background: white;
+$nav-hover: white;
+
+//main styles
+html, body {
+  background-color: $primary-color;
+}
+
+h1, h3 {
+  color: $accent-color;
+}
+
+p {
+  color: $paragraphColor;
+}
+
+.modal{
+  background: #EFEEF0;
+  border-bottom: 0.1px outset #BDBBBB;
+  border-right: 0.1px outset #808080;
+  border-left: 5px outset #D4FC00;
+  opacity: 0.7;
+  padding: 8px;
+  margin: 8px;
+  width: 80%;
+  padding: 10;
+}
+
+button {
+  background-color: $buttonColor;
+  font-family: Georgia;
+  font-weight: 600;
+  color: $buttonFontColor;
+  box-shadow: .5em black;
+  padding: 10px;
+  border-radius: 8.3%;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+
+}
+
+ul {
+  list-style: none;
+}
+
+//nav styles
+
+nav {
+  float: left;
+  width: $nav-max-width;
+  background-color: $nav-background;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  padding-left: 10px;
+}

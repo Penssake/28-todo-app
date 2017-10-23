@@ -10,7 +10,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1> Todo App </h1>
+              <h1> Note Boat </h1>
               <nav>
                 <ul>
                   <li> <Link to='/'> home </Link> </li>

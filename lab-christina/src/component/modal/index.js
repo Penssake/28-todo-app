@@ -1,18 +1,15 @@
 import React from 'react'
 
-let modalStyles = (props) => ({
-  background: 'green',
-})
-
-let modalMainStyles = {
-  background: 'blue',
-}
-
 class Modal extends React.Component {
-  render() {
-    return (
-      <div style={modalStyles(this.props)} className='modal'>
-        <main style={modalMainStyles} >
+  render(){
+    return(
+      <div
+        style={{
+          position: 'inline-block',
+          display: this.props.hide ? 'none' : 'block',
+        }}
+        className='modal'>
+        <main>
           {this.props.children}
         </main>
       </div>
