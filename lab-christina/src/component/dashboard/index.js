@@ -15,14 +15,16 @@ class Dashboard extends React.Component {
   }
 
   addNote(note){
-    note = {...note}
-    note.id = uuidv1()
-    note.editing = false
-    note.completed = false
-    this.setState(({notes}) => ({
-      notes: [...notes, note],
+    let result = {
+      ...note,
+      id: uuidv1(),
+      created: new Date(),
+      editing: false,
+      completed: false,
+  }
+  this.setState(prevState => ({
+      notes: [...prevState.notes, result],
     }))
-    console.log({notes});
   }
 
   removeNote(note){
