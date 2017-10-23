@@ -37,7 +37,7 @@ class Dashboard extends React.Component {
 
   updateNote(note){
     this.setState(prevState => ({
-      expenses: prevState.expenses.map(item => item.id == expense.id ? expense : item)
+      notes: prevState.notes.map(item => item.id == notes.id ? notes : item)
     }))
   }
 
