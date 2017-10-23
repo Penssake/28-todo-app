@@ -27,6 +27,10 @@ class Dashboard extends React.Component {
     }))
   }
 
+  componentDidUpdate(){
+      console.log('___state__', this.state);
+  }
+
   removeNote(note){
     this.setState(prevState => ({
       notes: prevState.notes.filter((item) => {
@@ -43,7 +47,7 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='dashboard'>
         <NoteForm onComplete={this.addNote} />
         <NoteList notes={this.state.notes} removeNote={this.removeNote} />
       </div>

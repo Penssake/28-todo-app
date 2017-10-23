@@ -14,7 +14,7 @@ class NoteForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    this.props.onComplete(...this.state)
+    this.props.onComplete(this.state)
     this.setState({title: '', content: ''})
   }
 

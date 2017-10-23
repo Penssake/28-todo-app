@@ -5,17 +5,17 @@ import Modal from '../modal'
 
 class NoteItem extends React.Component {
   render() {
-    let {note, removeNote} = this.props
+    let {note, removeNote, updateNote} = this.props
     return (
       <div>
       <Modal hide={false} >
         <ul className='note-item'>
-          <li> Faker title {note.title} </li>
-          <li> Faker content faker content faker content {note.content} </li>
+          <li> <strong> {note.title} </strong> </li>
+          <li> {note.content} </li>
         </ul>
         </Modal>
         <button className='remove' onClick={() => removeNote(note)}> remove </button>
-        <button className='update' onClick={() => updateNote(note)}> update </button>
+        <NoteForm onComplete={updateNote} />
       </div>
     )
   }
