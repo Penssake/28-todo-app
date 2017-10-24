@@ -15,9 +15,14 @@ class NoteForm extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  componentWillReceiveProps(props){
+    if(props.note)
+      this.setState(props.note)
+  }
+
   handleSubmit(event) {
     event.preventDefault()
-    this.props.onComplete(this.state)
+    return this.props.onComplete(this.state)
     this.setState(clearState)
   }
 

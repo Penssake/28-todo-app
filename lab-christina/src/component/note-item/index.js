@@ -15,7 +15,7 @@ class NoteItem extends React.Component {
         </ul>
         </Modal>
         <button className='remove' onClick={() => removeNote(note)}> remove </button>
-        <NoteForm onComplete={updateNote} note={note} />
+        <NoteForm onComplete={updateNote} note={note}/>
       </div>
     )
   }
