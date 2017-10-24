@@ -1,12 +1,15 @@
 import React from 'react'
 
+let clearState = {
+  title: '',
+  content: '',
+}
+
 class NoteForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      title: '',
-      content: '',
-    }
+    let {note} = props
+    this.state = note ? note : clearState
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -15,7 +18,7 @@ class NoteForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.onComplete(this.state)
-    this.setState({title: '', content: ''})
+    this.setState(clearState)
   }
 
   handleChange(event) {
@@ -24,6 +27,7 @@ class NoteForm extends React.Component {
   }
 
   render() {
+    let buttonText = this.props.note ? 'update' : 'create'
     return (
       <form
         className='note-form'
@@ -46,7 +50,7 @@ class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <button className='submit' type='submit'> create task </button>
+        <button type='submit'> {buttonText} </button>
       </form>
     )
   }

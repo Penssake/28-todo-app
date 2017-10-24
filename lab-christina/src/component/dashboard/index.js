@@ -27,10 +27,6 @@ class Dashboard extends React.Component {
     }))
   }
 
-  componentDidUpdate(){
-      console.log('___state__', this.state);
-  }
-
   removeNote(note){
     this.setState(prevState => ({
       notes: prevState.notes.filter((item) => {
@@ -40,16 +36,20 @@ class Dashboard extends React.Component {
   }
 
   updateNote(note){
-    this.setState(prevState => ({
-      notes: prevState.notes.map(item => item.id == notes.id ? notes : item)
+    this.setState(({notes}) => ({
+      notes: notes.map(item => item.id === notes.id ? note : item)
     }))
+  }
+
+  componentDidUpdate(){
+    console.log('___state__', this.state);
   }
 
   render() {
     return (
       <div className='dashboard'>
         <NoteForm onComplete={this.addNote} />
-        <NoteList notes={this.state.notes} removeNote={this.removeNote} />
+        <NoteList notes={this.state.notes} removeNote={this.removeNote} updateNote={this.updateNote}/>
       </div>
     )
   }
