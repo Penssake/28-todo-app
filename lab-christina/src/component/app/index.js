@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route, Link} from 'react-router-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 import Dashboard from '../dashboard'
 import Landing from '../landing'
 
@@ -18,8 +18,8 @@ class App extends React.Component {
                 </ul>
               </nav>
             </header>
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/' component={ Landing } />
+            <Route exact path='/dashboard' component={ Dashboard } />
           </div>
         </BrowserRouter>
       </div>

@@ -15,15 +15,13 @@ class Dashboard extends React.Component {
   }
 
   addNote(note){
-    let result = {
-      ...note,
-      id: uuidv1(),
-      created: new Date(),
-      editing: false,
-      completed: false,
-  }
-  this.setState(prevState => ({
-      notes: [...prevState.notes, result],
+    note = {...note}
+    note.id = uuidv1();
+    note.created = new Date();
+    note.editing = false;
+    note.completed = false;
+    this.setState(prevState => ({
+      notes: [...prevState.notes, note],
     }))
   }
 
@@ -36,8 +34,8 @@ class Dashboard extends React.Component {
   }
 
   updateNote(note){
-    this.setState(({notes}) => ({
-      notes: notes.map(item => item.id === notes.id ? note : item)
+    this.setState(({ notes }) => ({
+      notes: notes.map(item => item.id === note.id ? note : item)
     }))
   }
 
@@ -48,8 +46,8 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className='dashboard'>
-        <NoteForm onComplete={this.addNote} />
-        <NoteList notes={this.state.notes} removeNote={this.removeNote} updateNote={this.updateNote}/>
+        <NoteForm onComplete={ this.addNote } />
+        <NoteList notes={ this.state.notes } removeNote={ this.removeNote } updateNote={ this.updateNote }/>
       </div>
     )
   }
